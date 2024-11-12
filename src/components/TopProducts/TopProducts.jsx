@@ -2,6 +2,8 @@ import Img1 from "../../assets/best-product/best-1.png";
 import Img2 from "../../assets/best-product/best-2.png";
 import Img3 from "../../assets/best-product/best-3.png";
 import { FaStar } from "react-icons/fa";
+import PropTypes from 'prop-types';
+
 
 const ProductsData = [
   {
@@ -27,7 +29,7 @@ const ProductsData = [
   },
 ];
 
-const TopProducts = () => {
+const TopProducts = ({ handleOrderPopup }) => {
   return (
     <div>
       <div className="container">
@@ -74,7 +76,7 @@ const TopProducts = () => {
                 </p>
                 <button
                   className="bg-primary hover:scale-105 duration-300 text-white py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-primary"
-                  // onClick={handleOrderPopup}
+                  onClick={handleOrderPopup}
                 >
                   Order Now
                 </button>
@@ -85,6 +87,10 @@ const TopProducts = () => {
       </div>
     </div>
   );
+};
+
+TopProducts.propTypes = {
+  handleOrderPopup: PropTypes.func.isRequired,
 };
 
 export default TopProducts;

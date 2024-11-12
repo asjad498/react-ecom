@@ -97,7 +97,7 @@ const Testimonial = () => {
           </p>
         </div>
         {/* Testimonial Card */}
-        <div data-aos="zoom-in" >
+        <div data-aos="zoom-in"  >
           <Slider {...settings}>
             {testimonialData.map((data) => (
               <div key={data.id} className="my-6">

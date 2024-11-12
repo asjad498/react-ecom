@@ -2,6 +2,7 @@ import Image1 from "../../assets/hero/hero-section-1.png";
 import Image2 from "../../assets/hero/hero-section-2.png";
 import Image3 from "../../assets/hero/hero-section-3.png";
 import Slider from "react-slick";
+import PropTypes from 'prop-types';
 
 const ImageList = [
   {
@@ -27,7 +28,7 @@ const ImageList = [
   },
 ];
 
-const Hero = () => {
+const Hero = ({ handleOrderPopup }) => {
   var settings = {
     dots: false,
     arrows: false,
@@ -66,7 +67,7 @@ const Hero = () => {
                   data-aos-delay = "100"
                   className="text-sm">{data.description}</p>
                   <div>
-                    <button className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full">
+                    <button onClick={handleOrderPopup} className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full">
                       Order Now
                     </button>
                   </div>
@@ -91,6 +92,10 @@ const Hero = () => {
       </div>
     </div>
   );
+};
+
+Hero.propTypes = {
+  handleOrderPopup: PropTypes.func.isRequired,
 };
 
 export default Hero;
